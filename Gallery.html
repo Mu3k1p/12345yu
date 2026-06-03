@@ -1,0 +1,867 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>THE SOCIAL PHNOM PENH | Community is Culture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f7f3f2",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#444748",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#efefff",
+                        "surface-tint": "#5f5e5e",
+                        "surface": "#fdf8f8",
+                        "secondary-container": "#2e5bff",
+                        "surface-container-high": "#ebe7e6",
+                        "inverse-surface": "#313030",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary-fixed": "#001356",
+                        "inverse-primary": "#c8c6c5",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf8f8",
+                        "secondary": "#00A3FF", // Polished light blue accent
+                        "background": "#fdf8f8",
+                        "primary-container": "#1c1b1b",
+                        "outline": "#747878",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed": "#e6e2df",
+                        "secondary-fixed": "#dde1ff",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#868382",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "surface-dim": "#ddd9d8",
+                        "on-primary-fixed-variant": "#474746",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary-container": "#1c1b1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#b8c3ff",
+                        "on-secondary-fixed-variant": "#0035be",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary-container": "#858383"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px", // Tightened grid
+                        "section-gap": "160px", // Generous whitespace
+                        "container-max": "1440px", // High-fidelity width
+                        "margin-desktop": "80px", // Increased margin for airiness
+                        "margin-mobile": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.7", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "caption": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.04em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+                        "label-caps": ["11px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "0.95", "letterSpacing": "-0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fdf8f8;
+            color: #1c1b1b;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Outfit', sans-serif;
+        }
+        .architectural-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        /* Custom Tracking for Editorial Feel */
+        .tracking-editorial { letter-spacing: -0.04em; }
+        .tracking-label { letter-spacing: 0.25em; }
+            /* Scrolling / heavy animation additions */
+            html, body {
+                scroll-behavior: smooth;
+            }
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Snap sections to create a strong scrolling feel */
+            html { scroll-snap-type: y proximity; }
+            section { scroll-snap-align: start; scroll-snap-stop: always; }
+
+            /* Parallax background helper */
+            .parallax-bg { background-attachment: fixed; background-size: cover; background-position: center; will-change: transform; }
+
+            /* Entrance animation for section content (drama on scroll) */
+            .section-content { transform: translateY(40px) scale(0.98); opacity: 0; transition: transform 800ms cubic-bezier(.2,.9,.2,1), opacity 800ms ease; }
+            .section-content.in-view { transform: translateY(0) scale(1); opacity: 1; }
+
+            /* Extra motion for images and hero */
+            .heavy-zoom { transition: transform 1200ms cubic-bezier(.2,.9,.2,1); will-change: transform; }
+            .heavy-zoom.in-view { transform: scale(1.06); }
+
+            /* Subtle parallax layers inside sections */
+            .parallax-layer { transform: translateY(0); transition: transform 1000ms linear; }
+            .parallax-layer.slow { transition-duration: 1600ms; }
+
+            /* Keyframes for alternate animations */
+            @keyframes floatUp {
+                from {
+                    transform: translateY(30px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+        /* Gallery Image Animations */
+        .gallery-image {
+            animation: imageFadeSlide 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+            opacity: 0;
+        }
+        
+        @keyframes imageFadeSlide {
+            from {
+                opacity: 0;
+                transform: translateY(20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .kinetic-scroll-item:nth-child(1) .gallery-image { animation-delay: 0.1s; }
+        .kinetic-scroll-item:nth-child(2) .gallery-image { animation-delay: 0.2s; }
+        .kinetic-scroll-item:nth-child(3) .gallery-image { animation-delay: 0.3s; }
+        .kinetic-scroll-item:nth-child(4) .gallery-image { animation-delay: 0.2s; }
+        .kinetic-scroll-item:nth-child(5) .gallery-image { animation-delay: 0.4s; }
+        .kinetic-scroll-item:nth-child(6) .gallery-image { animation-delay: 0.3s; }
+        
+        .gallery-card:hover .gallery-image {
+            transform: scale(1.05);
+        }
+        
+        /* Modal Animations */
+        #gallery-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        #gallery-modal.active .bg-surface {
+            transform: scale(1);
+        }
+        
+        #gallery-modal {
+            backdrop-filter: blur(4px);
+        }
+        
+        /* Dark mode body transitions */
+        html.dark body {
+            background-color: #1a1a1a;
+            color: #f4f0ef;
+        }
+
+        .animate-float { animation: floatUp 900ms cubic-bezier(.2,.9,.2,1) both; }
+            /* Dark Mode Enhancements */
+        html.dark {
+            color-scheme: dark;
+        }
+        
+        html.dark body {
+            background-color: #0d0d0d;
+        }
+        
+        html.dark .bg-surface {
+            background-color: #1a1a1a;
+        }
+        
+        html.dark .bg-inverse-surface {
+            background-color: #313030;
+        }
+        
+        html.dark .bg-surface-container {
+            background-color: #242424;
+        }
+        
+        html.dark .text-primary {
+            color: #f4f0ef;
+        }
+        
+        /* Smooth transitions for mode switching */
+        html, body, nav, section, footer, button, .gallery-card, #gallery-modal {
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+</style>
+</head>
+<body class="font-body-md" id="main-body">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-sm border-b border-outline-variant/30 dark:border-outline/20 dock-full-width top-0 z-50 fixed w-full transition-colors duration-300">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-[20px] tracking-editorial font-bold text-primary dark:text-surface-bright">THE SOCIAL PHNOM PENH</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-secondary relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-secondary cursor-pointer" href="index.html">HOME</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-surface-bright transition-colors cursor-pointer" href="About.html">ABOUT</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-surface-bright transition-colors cursor-pointer" href="Event.html">EVENTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-surface-bright transition-colors cursor-pointer" href="Partners.html">PARTNERS</a>
+<a class="font-label-caps text-label-caps text-secondary dark:text-secondary relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-secondary cursor-pointer" href="Gallery.html">GALLERY</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-surface-bright transition-colors cursor-pointer" href="Members.html">MEMBERS</a>
+</div>
+<!-- Dark/Light Mode Toggle -->
+<button
+  id="theme-toggle"
+  class="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-surface-container dark:bg-surface-container-high border border-outline-variant/30 dark:border-outline/30 hover:bg-surface-container-high dark:hover:bg-inverse-surface transition-all duration-300"
+  aria-label="Toggle dark mode"
+  title="Toggle dark/light mode"
+>
+  <span class="material-symbols-outlined text-primary dark:text-surface-bright">light_mode</span>
+</button>
+<!-- Mobile Menu Toggle -->
+<button
+  id="mobile-menu-btn"
+  class="md:hidden text-primary dark:text-surface-bright z-40 relative hamburger"
+  aria-label="Open navigation menu"
+>
+  <span class="material-symbols-outlined hamburger-icon">menu</span>
+</button>
+</div>
+</nav>
+<button class="bg-secondary-container text-on-secondary px-lg py-sm rounded font-label-sm text-label-sm uppercase tracking-widest scale-95 active:opacity-80 transition-transform">
+                Contact
+            </button>
+</div>
+</header>
+<main class="pt-[100px] pb-2xl">
+<!-- Live Feed Status Section -->
+<section class="px-lg md:px-2xl mb-xl flex flex-col md:flex-row md:items-end justify-between gap-md">
+<div>
+<div class="flex items-center gap-sm mb-xs">
+<span class="w-3 h-3 bg-[#00A3FF] rounded-full live-indicator shadow-[0_0_10px_#00A3FF]"></span>
+<span class="font-label-sm text-label-sm text-[#00A3FF] uppercase tracking-widest">Live Documentary Feed</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase leading-none dark:text-surface-bright">Phnom Penh <br/>Noir Series</h2>
+</div>
+<div class="md:text-right max-w-sm">
+<p class="font-body-md text-body-md text-on-surface-variant dark:text-outline-variant italic">
+                    Capturing the electric velocity of Cambodia's capital through a high-performance architectural lens.
+                </p>
+</div>
+</section>
+<!-- Bento Architectural Grid -->
+<section class="px-lg md:px-2xl grid grid-cols-1 md:grid-cols-12 gap-base auto-rows-[280px]">
+<!-- Hero Landscape Post -->
+<div class="md:col-span-8 md:row-span-2 relative overflow-hidden group kinetic-scroll-item rounded-lg gallery-card cursor-pointer transition-all duration-300 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-secondary/20" data-gallery-id="hero1">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='560'%3E%3Crect fill='%23e5e2e1' width='800' height='560'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23747878' text-anchor='middle' dy='.3em'%3EHero Landscape 800x560%3C/text%3E%3C/svg%3E" alt="Urban Skyline" class="w-full h-full object-cover gallery-image" />
+<div class="absolute inset-0 noir-gradient flex flex-col justify-end p-lg">
+<div class="flex justify-between items-end">
+<div>
+<span class="font-label-sm text-label-sm bg-secondary text-white px-base py-xs mb-sm inline-block">CAM_01 // ROOFTOP</span>
+<h3 class="text-white font-headline-md text-headline-md leading-tight">THE CONCRETE SKYLINE</h3>
+</div>
+<span class="text-white/60 font-label-sm text-label-sm">22:14 GMT+7</span>
+</div>
+</div>
+</div>
+
+<!-- Vertical Portrait Post -->
+<div class="md:col-span-4 md:row-span-3 relative overflow-hidden group kinetic-scroll-item rounded-lg gallery-card cursor-pointer transition-all duration-300 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-secondary/20" data-gallery-id="portrait1">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='840'%3E%3Crect fill='%23d5d1d0' width='400' height='840'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='%23747878' text-anchor='middle' dy='.3em'%3EPortrait 400x840%3C/text%3E%3C/svg%3E" alt="Neon Rain" class="w-full h-full object-cover gallery-image" />
+<div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors"></div>
+<div class="absolute bottom-0 left-0 w-full p-lg bg-gradient-to-t from-black/80 to-transparent">
+<span class="font-label-sm text-label-sm text-tertiary-fixed mb-xs block tracking-widest">METADATA: 45MM F/1.8</span>
+<h3 class="text-white font-headline-md text-headline-md">NEON RAIN</h3>
+</div>
+</div>
+
+<!-- Square Detail Post -->
+<div class="md:col-span-4 md:row-span-2 relative overflow-hidden group kinetic-scroll-item rounded-lg gallery-card cursor-pointer transition-all duration-300 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-secondary/20" data-gallery-id="square1">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='560'%3E%3Crect fill='%23c5c1c0' width='400' height='560'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23747878' text-anchor='middle' dy='.3em'%3ESquare Detail 400x560%3C/text%3E%3C/svg%3E" alt="Architectural Detail" class="w-full h-full object-cover gallery-image" />
+<div class="absolute inset-0 border-[1px] border-white/10 group-hover:border-secondary transition-colors m-sm"></div>
+<div class="absolute top-md right-md">
+<span class="material-symbols-outlined text-white text-md">grid_view</span>
+</div>
+<div class="absolute bottom-md left-md">
+<span class="font-label-sm text-label-sm text-white/40 uppercase">Arch_Ref: 772-B</span>
+</div>
+</div>
+
+<!-- Wide Post Middle -->
+<div class="md:col-span-4 md:row-span-1 relative overflow-hidden group kinetic-scroll-item rounded-lg gallery-card cursor-pointer bg-gradient-to-r from-black to-black/70 transition-all duration-300 hover:shadow-lg dark:hover:shadow-secondary/20" data-gallery-id="text1">
+<div class="p-lg h-full flex flex-col justify-center border-l-4 border-secondary">
+<p class="font-label-sm text-label-sm text-white/50 mb-xs uppercase tracking-widest">Status Report</p>
+<p class="font-body-md text-body-md text-white font-bold leading-tight">ACTIVE SURVEILLANCE OF URBAN SPACES. DOCUMENTING THE SOCIAL FABRIC.</p>
+</div>
+</div>
+
+<!-- Portrait Post 2 -->
+<div class="md:col-span-4 md:row-span-2 relative overflow-hidden group kinetic-scroll-item rounded-lg gallery-card cursor-pointer transition-all duration-300 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-secondary/20" data-gallery-id="portrait2">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='560'%3E%3Crect fill='%23b5b1b0' width='400' height='560'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='%23747878' text-anchor='middle' dy='.3em'%3EPortrait 400x560%3C/text%3E%3C/svg%3E" alt="Motion Tracking" class="w-full h-full object-cover gallery-image" />
+<div class="absolute inset-0 bg-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute bottom-0 p-lg text-white">
+<span class="font-label-sm text-label-sm uppercase mb-xs block">Motion // Tracking</span>
+<h3 class="font-headline-md text-headline-md leading-none">PULSE</h3>
+</div>
+</div>
+
+<!-- Large Asymmetric Landscape -->
+<div class="md:col-span-8 md:row-span-2 relative overflow-hidden group kinetic-scroll-item rounded-lg gallery-card cursor-pointer transition-all duration-300 hover:shadow-lg dark:hover:shadow-lg dark:hover:shadow-secondary/20" data-gallery-id="landscape1">
+<img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='560'%3E%3Crect fill='%23a5a1a0' width='800' height='560'/%3E%3Ctext x='50%25' y='50%25' font-size='24' fill='%23747878' text-anchor='middle' dy='.3em'%3ELarge Landscape 800x560%3C/text%3E%3C/svg%3E" alt="The Grid" class="w-full h-full object-cover gallery-image" />
+<div class="absolute inset-0 noir-gradient"></div>
+<div class="absolute top-lg left-lg">
+<div class="bg-white/10 backdrop-blur-md px-md py-xs rounded flex items-center gap-xs">
+<span class="material-symbols-outlined text-white text-sm" style="font-variation-settings: 'FILL' 1;">videocam</span>
+<span class="font-label-sm text-label-sm text-white uppercase">Rec: 00:45:12</span>
+</div>
+</div>
+<div class="absolute bottom-lg left-lg">
+<h3 class="text-white font-headline-lg text-headline-lg">THE GRID</h3>
+</div>
+</div>
+</section>
+
+<!-- Expanded Card Modal -->
+<div id="gallery-modal" class="fixed inset-0 bg-black/60 dark:bg-black/80 z-40 hidden overflow-y-auto transition-all duration-300 opacity-0 pointer-events-none">
+<div class="flex items-center justify-center min-h-screen p-lg">
+<div class="bg-surface dark:bg-inverse-surface rounded-xl overflow-hidden shadow-2xl w-full max-w-4xl transform transition-all duration-300 scale-95">
+<!-- Modal Header -->
+<div class="flex justify-between items-center p-xl border-b border-outline/10 dark:border-outline-variant/20">
+<h2 id="modal-title" class="font-headline-md text-headline-md text-primary dark:text-surface-bright">Gallery Details</h2>
+<button id="close-modal" class="text-on-surface-variant dark:text-outline-variant hover:text-primary dark:hover:text-surface-bright transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+
+<!-- Modal Content -->
+<div class="p-xl">
+<img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-lg mb-xl shadow-lg" />
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant uppercase tracking-widest mb-sm">Camera Details</p>
+<p id="modal-metadata" class="font-body-md text-body-md text-on-surface dark:text-surface-bright">45MM F/1.8 @ ISO 1600</p>
+</div>
+<div>
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant uppercase tracking-widest mb-sm">Location</p>
+<p id="modal-location" class="font-body-md text-body-md text-on-surface dark:text-surface-bright">Phnom Penh, Cambodia</p>
+</div>
+</div>
+<div class="mt-xl">
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant uppercase tracking-widest mb-sm">Description</p>
+<p id="modal-description" class="font-body-md text-body-md text-on-surface dark:text-surface-bright leading-relaxed">A stunning capture documenting the urban landscape and cultural moments of Cambodia's vibrant capital city.</p>
+</div>
+<div class="mt-xl pt-xl border-t border-outline/10 dark:border-outline-variant/20">
+<p class="font-label-sm text-label-sm text-on-surface-variant dark:text-outline-variant uppercase tracking-widest mb-sm">Timestamp</p>
+<p id="modal-timestamp" class="font-body-md text-body-md text-on-surface dark:text-surface-bright">2024-06-02 22:14:00 GMT+7</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interaction Trigger: Load More -->
+<div class="mt-2xl flex justify-center kinetic-scroll-item">
+<button class="group flex flex-col items-center gap-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-[0.4em] text-on-surface-variant group-hover:text-secondary transition-colors">Expand Archives</span>
+<span class="material-symbols-outlined text-on-surface-variant animate-bounce group-hover:text-secondary">keyboard_double_arrow_down</span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+</div>
+</footer>
+  <footer class="bg-surface border-t border-outline-variant/30 py-32">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start w-full px-margin-desktop max-w-container-max mx-auto gap-20"
+      >
+        <div class="md:w-1/3">
+          <div
+            class="font-headline-md text-[24px] font-bold mb-8 tracking-editorial"
+          >
+            THE SOCIAL PHNOM PENH
+          </div>
+          <p class="font-body-md text-on-surface-variant leading-relaxed">
+            A sanctuary for creative exchange and intentional community in the
+            heart of Cambodia.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-24">
+          <div class="flex flex-col gap-6">
+            <span
+              class="font-label-caps text-label-caps text-secondary tracking-label mb-2"
+              >SOCIAL</span
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="https://www.instagram.com/thesocialphnompenh/"
+              >INSTAGRAM</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="https://www.linkedin.com/company/the-social-phnom-penh/"
+              >LINKEDIN</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="https://www.tiktok.com/@thesocialpnh?_r=1&_t=zs-939gf5ekhqp"
+              >TIKTOK</a
+            >
+          </div>
+          <div class="flex flex-col gap-6">
+            <span
+              class="font-label-caps text-label-caps text-secondary tracking-label mb-2"
+              >CONNECT</span
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >MEMBERSHIP</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >PARTNERSHIPS</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >CONTACT</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-container-max mx-auto px-margin-desktop mt-32 pt-12 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-on-surface-variant opacity-50"
+      >
+        <p class="font-label-caps text-[10px] tracking-widest">
+          © 2026 THE SOCIAL PHNOM PENH. ALL RIGHTS RESERVED.
+        </p>
+        <div class="flex gap-8 mt-4 md:mt-0">
+          <p class="font-label-caps text-[10px] tracking-widest">
+            PRIVACY POLICY
+          </p>
+          <p class="font-label-caps text-[10px] tracking-widest">
+            TERMS OF SERVICE
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Smooth transition for navbar on scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 20) {
+          nav.classList.add(
+            "bg-surface/95",
+            "shadow-[0_4px_30px_rgba(0,0,0,0.03)]",
+          );
+          nav.classList.remove("h-20");
+          nav.classList.add("h-16");
+        } else {
+          nav.classList.remove(
+            "bg-surface/95",
+            "shadow-[0_4px_30px_rgba(0,0,0,0.03)]",
+          );
+          nav.classList.add("h-20");
+          nav.classList.remove("h-16");
+        }
+      });
+
+      // Subtle mouse parallax for hero
+      document.addEventListener("mousemove", (e) => {
+        const heroImg = document.querySelector(".absolute.inset-0.z-0 div");
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
+        heroImg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+      });
+    </script>
+    <script>
+      // Mobile Menu Toggle
+      (function () {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        let isOpen = false;
+
+        function openMenu() {
+          isOpen = true;
+          mobileMenuOverlay.classList.remove('hidden');
+          
+          // Trigger reflow to enable transition
+          void mobileMenuPanel.offsetWidth;
+          
+          mobileMenuPanel.style.transform = 'translateX(0)';
+          mobileMenuOverlay.style.opacity = '1';
+          mobileMenuOverlay.style.pointerEvents = 'auto';
+          
+          // Animate hamburger icon
+          hamburgerIcon.style.transform = 'rotate(90deg) scale(0)';
+          
+          // Stagger animation for nav links
+          mobileNavLinks.forEach((link) => {
+            const index = parseInt(link.getAttribute('data-index'));
+            setTimeout(() => {
+              link.style.opacity = '1';
+              link.style.transform = 'translateX(0)';
+            }, 80 + index * 60);
+          });
+          
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          isOpen = false;
+          mobileMenuPanel.style.transform = 'translateX(100%)';
+          mobileMenuOverlay.style.opacity = '0';
+          mobileMenuOverlay.style.pointerEvents = 'none';
+          
+          // Reset hamburger icon
+          hamburgerIcon.style.transform = 'rotate(0deg) scale(1)';
+          
+          // Reset nav links
+          mobileNavLinks.forEach((link) => {
+            link.style.opacity = '0';
+            link.style.transform = 'translateX(100px)';
+          });
+          
+          setTimeout(() => {
+            if (!isOpen) {
+              mobileMenuOverlay.classList.add('hidden');
+            }
+          }, 500);
+          
+          document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+          if (isOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        // Close menu when clicking on overlay or links
+        mobileMenuOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileMenuOverlay) {
+            closeMenu();
+          }
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            closeMenu();
+          });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && isOpen) {
+            closeMenu();
+          }
+        });
+      })();
+
+      // Add 'in-view' / animate classes as sections enter the viewport
+      (function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const el = entry.target;
+              if (entry.isIntersecting) {
+                el.classList.add("in-view");
+                const content = el.querySelectorAll(".section-content");
+                content.forEach((c, i) => {
+                  setTimeout(
+                    () => c.classList.add("in-view", "animate-float"),
+                    i * 80,
+                  );
+                });
+                const heavy = el.querySelectorAll(".heavy-zoom");
+                heavy.forEach((h) => h.classList.add("in-view"));
+                const slow = el.querySelectorAll(".parallax-layer.slow");
+                slow.forEach(
+                  (p, i) => (p.style.transform = `translateY(${-12}px)`),
+                );
+              } else {
+                el.classList.remove("in-view");
+                el.querySelectorAll(".section-content").forEach((c) =>
+                  c.classList.remove("in-view", "animate-float"),
+                );
+                el.querySelectorAll(".heavy-zoom").forEach((h) =>
+                  h.classList.remove("in-view"),
+                );
+                el.querySelectorAll(".parallax-layer.slow").forEach(
+                  (p) => (p.style.transform = "translateY(0)"),
+                );
+              }
+            });
+          },
+          { threshold: 0.18 },
+        );
+
+        document
+          .querySelectorAll("section")
+          .forEach((s) => observer.observe(s));
+      })();
+
+
+        // Kinetic Continuity Scroll Interaction
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Add slight velocity-based shift if scrolling fast
+                    const rect = entry.target.getBoundingClientRect();
+                    const delay = Math.min(rect.top / 1000, 0.5);
+                    entry.target.style.transitionDelay = `${delay}s`;
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.kinetic-scroll-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Simple parallax effect on scroll for images
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            document.querySelectorAll('.kinetic-scroll-item img').forEach(img => {
+                const speed = 0.05;
+                const yPos = -(scrolled * speed);
+                img.style.transform = `translateY(${yPos}px) scale(1.1)`;
+            });
+        });
+    </script>
+    <script>
+      // Mobile Menu Toggle
+      (function () {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        let isOpen = false;
+
+        function openMenu() {
+          isOpen = true;
+          mobileMenuOverlay.classList.remove('hidden');
+          void mobileMenuPanel.offsetWidth;
+          mobileMenuPanel.style.transform = 'translateX(0)';
+          mobileMenuOverlay.style.opacity = '1';
+          mobileMenuOverlay.style.pointerEvents = 'auto';
+          hamburgerIcon.style.transform = 'rotate(90deg) scale(0)';
+          mobileNavLinks.forEach((link) => {
+            const index = parseInt(link.getAttribute('data-index'));
+            setTimeout(() => {
+              link.style.opacity = '1';
+              link.style.transform = 'translateX(0)';
+            }, 80 + index * 60);
+          });
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          isOpen = false;
+          mobileMenuPanel.style.transform = 'translateX(100%)';
+          mobileMenuOverlay.style.opacity = '0';
+          mobileMenuOverlay.style.pointerEvents = 'none';
+          hamburgerIcon.style.transform = 'rotate(0deg) scale(1)';
+          mobileNavLinks.forEach((link) => {
+            link.style.opacity = '0';
+            link.style.transform = 'translateX(100px)';
+          });
+          setTimeout(() => {
+            if (!isOpen) mobileMenuOverlay.classList.add('hidden');
+          }, 500);
+          document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+          isOpen ? closeMenu() : openMenu();
+        });
+
+        mobileMenuOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileMenuOverlay) closeMenu();
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', () => closeMenu());
+        });
+
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && isOpen) closeMenu();
+        });
+      })();
+    </script>    <script>
+      // Dark Mode Toggle
+      (function() {
+        const themeToggle = document.getElementById('theme-toggle');
+        const htmlElement = document.documentElement;
+        const isDarkMode = localStorage.getItem('theme') === 'dark' || 
+                          (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        
+        if (isDarkMode) {
+          htmlElement.classList.add('dark');
+        }
+        
+        if (themeToggle) {
+          themeToggle.addEventListener('click', () => {
+            htmlElement.classList.toggle('dark');
+            const isDark = htmlElement.classList.contains('dark');
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            
+            // Update icon
+            const icon = themeToggle.querySelector('.material-symbols-outlined');
+            icon.textContent = isDark ? 'dark_mode' : 'light_mode';
+          });
+          
+          // Set initial icon
+          const icon = themeToggle.querySelector('.material-symbols-outlined');
+          icon.textContent = isDarkMode ? 'dark_mode' : 'light_mode';
+        }
+      })();
+      
+      // Gallery Card Modal
+      (function() {
+        const modal = document.getElementById('gallery-modal');
+        const closeBtn = document.getElementById('close-modal');
+        const galleryCards = document.querySelectorAll('.gallery-card');
+        
+        const galleryData = {
+          'hero1': {
+            title: 'THE CONCRETE SKYLINE',
+            image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22560%22%3E%3Crect fill=%22%236b6b6b%22 width=%22800%22 height=%22560%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2224%22 fill=%22%23fff%22 text-anchor=%22middle%22 dy=%22.3em%22%3EHero Landscape - Urban View%3C/text%3E%3C/svg%3E',
+            metadata: '35MM F/2.8 @ ISO 800',
+            location: 'Riverside, Phnom Penh',
+            description: "Capturing the architectural essence of Cambodia's bustling capital, where traditional and modern structures create a unique urban landscape.",
+            timestamp: '2024-06-02 22:14:00 GMT+7'
+          },
+          'portrait1': {
+            title: 'NEON RAIN',
+            image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22840%22%3E%3Crect fill=%225b5b5b%22 width=%22400%22 height=%22840%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2220%22 fill=%22%23fff%22 text-anchor=%22middle%22 dy=%22.3em%22%3EPortrait - Neon Lights%3C/text%3E%3C/svg%3E',
+            metadata: '45MM F/1.8 @ ISO 1600',
+            location: 'Street Market District',
+            description: "Night photography documenting the vibrant energy of Phnom Penh's street markets, with neon signs reflecting the dynamic urban culture.",
+            timestamp: '2024-06-01 19:45:30 GMT+7'
+          },
+          'square1': {
+            title: 'ARCHITECTURAL DETAILS',
+            image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22560%22%3E%3Crect fill=%234b4b4b%22 width=%22400%22 height=%22560%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2218%22 fill=%22%23fff%22 text-anchor=%22middle%22 dy=%22.3em%22%3EArchitectural Detail%3C/text%3E%3C/svg%3E',
+            metadata: '85MM F/4.0 @ ISO 400',
+            location: 'French Quarter',
+            description: 'Close-up study of colonial architecture and decorative elements found throughout the French Quarter of Phnom Penh.',
+            timestamp: '2024-05-31 14:22:15 GMT+7'
+          },
+          'text1': {
+            title: 'STATUS REPORT',
+            image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22280%22%3E%3Crect fill=%23000%22 width=%22400%22 height=%22280%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2216%22 fill=%22%23fff%22 text-anchor=%22middle%22 dy=%22.3em%22%3EActive Documentation%3C/text%3E%3C/svg%3E',
+            metadata: 'Documentary Focus',
+            location: 'Urban Surveillance',
+            description: "Continuous documentation of urban spaces and the social fabric that defines Phnom Penh's character and cultural identity.",
+            timestamp: '2024-06-02 23:00:00 GMT+7'
+          },
+          'portrait2': {
+            title: 'PULSE',
+            image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22560%22%3E%3Crect fill=%233b3b3b%22 width=%22400%22 height=%22560%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2218%22 fill=%22%23fff%22 text-anchor=%22middle%22 dy=%22.3em%22%3EMotion Capture%3C/text%3E%3C/svg%3E',
+            metadata: '50MM F/2.0 @ ISO 1200',
+            location: 'City Center Motion',
+            description: "Tracking movement through the urban landscape, capturing the kinetic energy of Phnom Penh's daily rhythm and pulse.",
+            timestamp: '2024-06-02 20:30:45 GMT+7'
+          },
+          'landscape1': {
+            title: 'THE GRID',
+            image: 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22560%22%3E%3Crect fill=%232b2b2b%22 width=%22800%22 height=%22560%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-size=%2224%22 fill=%22%23fff%22 text-anchor=%22middle%22 dy=%22.3em%22%3EUrban Grid - Aerial View%3C/text%3E%3C/svg%3E',
+            metadata: '24MM F/2.8 @ ISO 600',
+            location: 'Aerial Perspective',
+            description: "Large-scale documentation of urban planning and structure, revealing the geometric patterns that organize Phnom Penh's cityscape.",
+            timestamp: '2024-06-02 18:00:00 GMT+7'
+          }
+        };
+        
+        galleryCards.forEach(card => {
+          card.addEventListener('click', () => {
+            const id = card.getAttribute('data-gallery-id');
+            const data = galleryData[id];
+            
+            if (data) {
+              document.getElementById('modal-title').textContent = data.title;
+              document.getElementById('modal-image').src = data.image;
+              document.getElementById('modal-image').alt = data.title;
+              document.getElementById('modal-metadata').textContent = data.metadata;
+              document.getElementById('modal-location').textContent = data.location;
+              document.getElementById('modal-description').textContent = data.description;
+              document.getElementById('modal-timestamp').textContent = data.timestamp;
+              
+              modal.classList.add('active');
+              document.body.style.overflow = 'hidden';
+            }
+          });
+        });
+        
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+        
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+          }
+        });
+      })();
+    </script>
+</body></html>

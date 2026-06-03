@@ -1,0 +1,580 @@
+<!DOCTYPE html><html class="light" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>THE SOCIAL PHNOM PENH | Community is Culture</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-low": "#f7f3f2",
+                        "tertiary": "#000000",
+                        "on-surface-variant": "#444748",
+                        "error": "#ba1a1a",
+                        "on-secondary-container": "#efefff",
+                        "surface-tint": "#5f5e5e",
+                        "surface": "#fdf8f8",
+                        "secondary-container": "#2e5bff",
+                        "surface-container-high": "#ebe7e6",
+                        "inverse-surface": "#313030",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-surface": "#1c1b1b",
+                        "outline-variant": "#c4c7c7",
+                        "on-secondary-fixed": "#001356",
+                        "inverse-primary": "#c8c6c5",
+                        "on-primary": "#ffffff",
+                        "surface-bright": "#fdf8f8",
+                        "secondary": "#00A3FF", // Polished light blue accent
+                        "background": "#fdf8f8",
+                        "primary-container": "#1c1b1b",
+                        "outline": "#747878",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f4f0ef",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#1c1b1b",
+                        "tertiary-fixed": "#e6e2df",
+                        "secondary-fixed": "#dde1ff",
+                        "on-tertiary-fixed-variant": "#484645",
+                        "primary": "#000000",
+                        "on-tertiary-container": "#868382",
+                        "tertiary-fixed-dim": "#cac6c4",
+                        "surface-dim": "#ddd9d8",
+                        "on-primary-fixed-variant": "#474746",
+                        "primary-fixed-dim": "#c8c6c5",
+                        "tertiary-container": "#1c1b1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#1c1b1a",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-container": "#f1edec",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#e5e2e1",
+                        "on-primary-fixed": "#1c1b1b",
+                        "secondary-fixed-dim": "#b8c3ff",
+                        "on-secondary-fixed-variant": "#0035be",
+                        "surface-variant": "#e5e2e1",
+                        "on-primary-container": "#858383"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "16px", // Tightened grid
+                        "section-gap": "160px", // Generous whitespace
+                        "container-max": "1440px", // High-fidelity width
+                        "margin-desktop": "80px", // Increased margin for airiness
+                        "margin-mobile": "24px",
+                        "base": "8px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Outfit"],
+                        "headline-lg-mobile": ["Outfit"],
+                        "caption": ["Outfit"],
+                        "headline-lg": ["Outfit"],
+                        "label-caps": ["Outfit"],
+                        "headline-md": ["Outfit"],
+                        "display-lg": ["Outfit"],
+                        "body-md": ["Outfit"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "1.7", "letterSpacing": "0.01em", "fontWeight": "300"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "500"}],
+                        "caption": ["13px", {"lineHeight": "1.5", "letterSpacing": "0.04em", "fontWeight": "400"}],
+                        "headline-lg": ["40px", {"lineHeight": "1.1", "letterSpacing": "-0.03em", "fontWeight": "500"}],
+                        "label-caps": ["11px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "600"}],
+                        "headline-md": ["28px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "400"}],
+                        "display-lg": ["72px", {"lineHeight": "0.95", "letterSpacing": "-0.05em", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0.01em", "fontWeight": "300"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #fdf8f8;
+            color: #1c1b1b;
+            -webkit-font-smoothing: antialiased;
+            font-family: 'Outfit', sans-serif;
+        }
+        .architectural-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 16px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        /* Custom Tracking for Editorial Feel */
+        .tracking-editorial { letter-spacing: -0.04em; }
+        .tracking-label { letter-spacing: 0.25em; }
+            /* Scrolling / heavy animation additions */
+            html, body {
+                scroll-behavior: smooth;
+            }
+            body {
+                -webkit-overflow-scrolling: touch;
+            }
+            /* Snap sections to create a strong scrolling feel */
+            html { scroll-snap-type: y proximity; }
+            section { scroll-snap-align: start; scroll-snap-stop: always; }
+
+            /* Parallax background helper */
+            .parallax-bg { background-attachment: fixed; background-size: cover; background-position: center; will-change: transform; }
+
+            /* Entrance animation for section content (drama on scroll) */
+            .section-content { transform: translateY(40px) scale(0.98); opacity: 0; transition: transform 800ms cubic-bezier(.2,.9,.2,1), opacity 800ms ease; }
+            .section-content.in-view { transform: translateY(0) scale(1); opacity: 1; }
+
+            /* Extra motion for images and hero */
+            .heavy-zoom { transition: transform 1200ms cubic-bezier(.2,.9,.2,1); will-change: transform; }
+            .heavy-zoom.in-view { transform: scale(1.06); }
+
+            /* Subtle parallax layers inside sections */
+            .parallax-layer { transform: translateY(0); transition: transform 1000ms linear; }
+            .parallax-layer.slow { transition-duration: 1600ms; }
+
+            /* Keyframes for alternate animations */
+            @keyframes floatUp { from { transform: translateY(30px); opacity: 0 } to { transform: translateY(0); opacity: 1 } }
+            .animate-float { animation: floatUp 900ms cubic-bezier(.2,.9,.2,1) both; }
+    </style>
+</head>
+<body class="font-body-md" id="main-body">
+<!-- TopNavBar -->
+<nav class="bg-surface/90 backdrop-blur-sm border-b border-outline-variant/30 dock-full-width top-0 z-50 fixed w-full">
+<div class="flex justify-between items-center w-full px-margin-desktop py-base max-w-container-max mx-auto h-20">
+<div class="font-headline-md text-[20px] tracking-editorial font-bold text-primary">THE SOCIAL PHNOM PENH</div>
+<!-- Desktop Links -->
+<div class="hidden md:flex gap-10 items-center">
+<a class="font-label-caps text-label-caps text-secondary relative after:absolute after:bottom-[-4px] after:left-0 after:w-full after:h-[1px] after:bg-secondary cursor-pointer" href="index.html">HOME</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="About.html">ABOUT</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="Event.html">EVENTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="Partners.html">PARTNERS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="Gallery.html">GALLERY</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="Event.html">EVENTS</a>
+<a class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="Members.html">MEMBERS</a>
+</div>
+<!-- Mobile Menu Toggle -->
+ <div
+      id="mobile-menu-overlay"
+      class="hidden fixed inset-0 z-40 bg-surface/10 backdrop-blur-md transition-all duration-500"
+    >
+      <div
+        id="mobile-menu-panel"
+        class="fixed top-0 right-0 h-screen w-full max-w-sm bg-surface/95 backdrop-blur-xl shadow-2xl transform translate-x-full transition-transform duration-700 ease-out overflow-y-auto"
+      >
+        <div class="p-8 pt-24 flex flex-col h-full">
+          <div class="flex-1 space-y-2">
+            <a
+              href="index.html"
+              class="mobile-nav-link block py-5 px-6 font-headline-md text-headline-md text-primary hover:bg-primary/5 transition-all duration-300 transform translate-x-full opacity-0"
+              data-index="0"
+              >Home</a
+            >
+            <a
+              href="About.html"
+              class="mobile-nav-link block py-5 px-6 font-headline-md text-headline-md text-primary hover:bg-primary/5 transition-all duration-300 transform translate-x-full opacity-0"
+              data-index="1"
+              >About</a
+            >
+            <a
+              href="Event.html"
+              class="mobile-nav-link block py-5 px-6 font-headline-md text-headline-md text-primary hover:bg-primary/5 transition-all duration-300 transform translate-x-full opacity-0"
+              data-index="2"
+              >Events</a
+            >
+            <a
+              href="Partners.html"
+              class="mobile-nav-link block py-5 px-6 font-headline-md text-headline-md text-primary hover:bg-primary/5 transition-all duration-300 transform translate-x-full opacity-0"
+              data-index="3"
+              >Partners</a
+            >
+            <a
+              href="Gallery.html"
+              class="mobile-nav-link block py-5 px-6 font-headline-md text-headline-md text-primary hover:bg-primary/5 transition-all duration-300 transform translate-x-full opacity-0"
+              data-index="4"
+              >Gallery</a
+            >
+            <a
+              href="Members.html"
+              class="mobile-nav-link block py-5 px-6 font-headline-md text-headline-md text-primary hover:bg-primary/5 transition-all duration-300 transform translate-x-full opacity-0"
+              data-index="5"
+              >Members</a
+            >
+          </div>
+          <div class="border-t border-primary/10 pt-8 pb-8 opacity-0 transform translate-x-full transition-all duration-700" style="transition-delay: 400ms">
+            <p class="font-label-caps text-label-caps text-on-surface-variant tracking-label mb-4">CONNECT</p>
+            <div class="flex gap-4">
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined">public</span>
+              </a>
+              <a href="#" class="text-primary hover:text-secondary transition-colors">
+                <span class="material-symbols-outlined">mail</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        <button
+          id="mobile-menu-btn"
+          class="md:hidden text-primary z-40 relative hamburger"
+          aria-label="Open navigation menu"
+        >
+          <span class="material-symbols-outlined hamburger-icon">menu</span>
+        </button>
+      </div>
+    </nav>
+<!-- Hero Section: Aligned Voices -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap">
+<div class="flex flex-col md:flex-row gap-12 items-end">
+<div class="w-full md:w-2/3">
+<span class="font-label-caps text-label-caps text-secondary mb-6 block">STRATEGIC ALLIANCES</span>
+<h1 class="font-display-xl text-display-xl md:text-display-xl mb-8 uppercase tracking-tighter">ALIGNED<br/>VOICES</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        A network of cultural architects and visionaries. We partner with brands that prioritize structural honesty and cinematic intentionality over ephemeral noise.
+                    </p>
+</div>
+<div class="w-full md:w-1/3 aspect-[4/5] overflow-hidden">
+<img class="w-full h-full object-cover grayscale-reveal" data-alt="A high-contrast cinematic architectural shot of a minimalist gallery interior in bright daylight. The space features sharp shadows and clean white concrete surfaces, embodying a light-mode editorial aesthetic. A single sculptural object stands in the center, symbolizing collaboration and structural integrity within a refined, modern cultural context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCelidHtr93Bg0JkBC6Y8ldDQzF0Y5Fy_yoj5fw-_aHEUSh7iKb6y_UvkTZcpUjrfZvts9eqXDarMUJ7E5VSHIY9bi78jL5rrN6F3yeFqf65YTN_pfhKfepRTSYiy9ieERrLYbLfgQlRtcyRp9cmSVtXu-DRNPZfQU7wvCoZyYEVQOcqVxg4TQZ-OqvKGqzNHvxzux4T_EQtwqerq5THPc2HJ2sXhQyy_npiHnK6km87nDeapTYYNIo5sMKoNgd271wcqBiQvximis"/>
+</div>
+</div>
+</section>
+<!-- The Network: Partner Grid -->
+<section class="mb-section-gap border-t border-outline-variant/10">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-center px-margin-desktop py-12">
+<h2 class="font-headline-lg text-headline-lg uppercase">THE NETWORK</h2>
+<span class="font-label-caps text-label-caps text-on-surface-variant">2024 COLLECTIVE</span>
+</div>
+<!-- 5-column grid system -->
+<div class="grid grid-cols-2 md:grid-cols-5 border-l border-outline-variant/10">
+<!-- Partner 1 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">VØID</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">ARCHITECTURAL STUDIO</span>
+</div>
+<!-- Partner 2 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">BKK-1</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">CULTURAL HUB</span>
+</div>
+<!-- Partner 3 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">RAW</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">MATERIAL DESIGN</span>
+</div>
+<!-- Partner 4 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">NEON</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">DIGITAL ETHOS</span>
+</div>
+<!-- Partner 5 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">S.PP</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">SOCIAL PLATFORM</span>
+</div>
+<!-- Partner 6 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">KHMER</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">HERITAGE LAB</span>
+</div>
+<!-- Partner 7 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">MONO</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">SONIC TEXTURES</span>
+</div>
+<!-- Partner 8 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">URBN</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">URBAN PLANNING</span>
+</div>
+<!-- Partner 9 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">ALLEY</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">HIDDEN GEMS</span>
+</div>
+<!-- Partner 10 -->
+<div class="aspect-square flex flex-col items-center justify-center custom-grid-border group hover:bg-on-background transition-all duration-500 cursor-crosshair">
+<span class="font-headline-md text-headline-md font-bold group-hover:text-background transition-colors">DARK</span>
+<span class="font-label-caps text-[9px] mt-4 opacity-0 group-hover:opacity-100 group-hover:text-secondary transition-all">VISUAL NOIR</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Feature Content Block: Editorial Quality -->
+<section class="px-margin-desktop max-w-container-max mx-auto mb-section-gap grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-7 aspect-[16/10] bg-surface-container overflow-hidden">
+<img class="w-full h-full object-cover grayscale-reveal" data-alt="A minimalist overhead view of a collaborative workshop table with blueprint rolls, technical pens, and high-end cameras arranged in a strict grid. The lighting is bright and even, casting soft shadows on a clean white surface. The composition is clinical and sophisticated, representing the precise nature of the creative network's collective work and partnerships." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB5-QcpIbmKTonmOroCQBm2tac9L9GrUrES7wT75PGOw1eq7LP-qprWArJGQkgPb35ZpthwInSLMiPwOxWC3M4b1ldHQVJQaAkYAMDaRSQAUc5iMXyGU1SKnu1Mbfv-Cd8WFCcUw50mDvzTgO0rGZiDa4Xd4woZXqX8CoiQCN0pMUUFyetvOa66JsonRFWDaxE79JtdW8oxolm7TjzTiYVSs008L1jmcvKATRiACKau_IgWFqZBuVyHiDA6hN_mRml1maWGNb_AWR8"/>
+</div>
+<div class="md:col-span-5 flex flex-col justify-center py-12 md:pl-12">
+<span class="font-label-caps text-label-caps text-secondary mb-4 uppercase">Curation Ethos</span>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-md uppercase mb-6">BEYOND THE BRAND</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-8">
+                    Selection for the network is based on a shared aesthetic rigor. We look for partners who understand that the space between things is as important as the things themselves.
+                </p>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-secondary">verified</span>
+<span class="font-label-caps text-label-caps">STRICTLY VETTED FOR INTEGRITY</span>
+</div>
+</div>
+</section>
+<!-- Shape the Collective CTA -->
+<section class="bg-on-background text-background py-32">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center">
+<h2 class="font-display-xl text-display-xl-mobile md:text-display-xl uppercase tracking-tighter mb-12">SHAPE THE<br/>COLLECTIVE</h2>
+<div class="flex flex-col md:flex-row justify-center gap-8">
+<a class="font-label-caps text-label-caps px-16 py-6 border border-background/20 hover:bg-background hover:text-on-background transition-all duration-500 uppercase" href="#">Apply for Partnership</a>
+<a class="font-label-caps text-label-caps px-16 py-6 border border-background/20 hover:bg-secondary hover:border-secondary transition-all duration-500 uppercase" href="#">View Manifesto</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface border-t border-outline-variant/30 py-32">
+      <div
+        class="flex flex-col md:flex-row justify-between items-start w-full px-margin-desktop max-w-container-max mx-auto gap-20"
+      >
+        <div class="md:w-1/3">
+          <div
+            class="font-headline-md text-[24px] font-bold mb-8 tracking-editorial"
+          >
+            THE SOCIAL PHNOM PENH
+          </div>
+          <p class="font-body-md text-on-surface-variant leading-relaxed">
+            A sanctuary for creative exchange and intentional community in the
+            heart of Cambodia.
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-24">
+          <div class="flex flex-col gap-6">
+            <span
+              class="font-label-caps text-label-caps text-secondary tracking-label mb-2"
+              >SOCIAL</span
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >INSTAGRAM</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >FACEBOOK</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >LINKEDIN</a
+            >
+          </div>
+          <div class="flex flex-col gap-6">
+            <span
+              class="font-label-caps text-label-caps text-secondary tracking-label mb-2"
+              >CONNECT</span
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >MEMBERSHIP</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >PARTNERSHIPS</a
+            >
+            <a
+              class="font-label-caps text-label-caps text-on-surface-variant hover:text-primary transition-colors tracking-widest"
+              href="#"
+              >CONTACT</a
+            >
+          </div>
+        </div>
+      </div>
+      <div
+        class="max-w-container-max mx-auto px-margin-desktop mt-32 pt-12 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center text-on-surface-variant opacity-50"
+      >
+        <p class="font-label-caps text-[10px] tracking-widest">
+          © 2026 THE SOCIAL PHNOM PENH. ALL RIGHTS RESERVED.
+        </p>
+        <div class="flex gap-8 mt-4 md:mt-0">
+          <p class="font-label-caps text-[10px] tracking-widest">
+            PRIVACY POLICY
+          </p>
+          <p class="font-label-caps text-[10px] tracking-widest">
+            TERMS OF SERVICE
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Smooth transition for navbar on scroll
+      window.addEventListener("scroll", () => {
+        const nav = document.querySelector("nav");
+        if (window.scrollY > 20) {
+          nav.classList.add(
+            "bg-surface/95",
+            "shadow-[0_4px_30px_rgba(0,0,0,0.03)]",
+          );
+          nav.classList.remove("h-20");
+          nav.classList.add("h-16");
+        } else {
+          nav.classList.remove(
+            "bg-surface/95",
+            "shadow-[0_4px_30px_rgba(0,0,0,0.03)]",
+          );
+          nav.classList.add("h-20");
+          nav.classList.remove("h-16");
+        }
+      });
+
+      // Subtle mouse parallax for hero
+      document.addEventListener("mousemove", (e) => {
+        const heroImg = document.querySelector(".absolute.inset-0.z-0 div");
+        const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+        const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
+        heroImg.style.transform = `scale(1.05) translate(${moveX}px, ${moveY}px)`;
+      });
+    </script>
+    <script>
+      // Mobile Menu Toggle
+      (function () {
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+        const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+        const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+        const hamburgerIcon = document.querySelector('.hamburger-icon');
+        let isOpen = false;
+
+        function openMenu() {
+          isOpen = true;
+          mobileMenuOverlay.classList.remove('hidden');
+          
+          // Trigger reflow to enable transition
+          void mobileMenuPanel.offsetWidth;
+          
+          mobileMenuPanel.style.transform = 'translateX(0)';
+          mobileMenuOverlay.style.opacity = '1';
+          mobileMenuOverlay.style.pointerEvents = 'auto';
+          
+          // Animate hamburger icon
+          hamburgerIcon.style.transform = 'rotate(90deg) scale(0)';
+          
+          // Stagger animation for nav links
+          mobileNavLinks.forEach((link) => {
+            const index = parseInt(link.getAttribute('data-index'));
+            setTimeout(() => {
+              link.style.opacity = '1';
+              link.style.transform = 'translateX(0)';
+            }, 80 + index * 60);
+          });
+          
+          document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+          isOpen = false;
+          mobileMenuPanel.style.transform = 'translateX(100%)';
+          mobileMenuOverlay.style.opacity = '0';
+          mobileMenuOverlay.style.pointerEvents = 'none';
+          
+          // Reset hamburger icon
+          hamburgerIcon.style.transform = 'rotate(0deg) scale(1)';
+          
+          // Reset nav links
+          mobileNavLinks.forEach((link) => {
+            link.style.opacity = '0';
+            link.style.transform = 'translateX(100px)';
+          });
+          
+          setTimeout(() => {
+            if (!isOpen) {
+              mobileMenuOverlay.classList.add('hidden');
+            }
+          }, 500);
+          
+          document.body.style.overflow = '';
+        }
+
+        mobileMenuBtn.addEventListener('click', () => {
+          if (isOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        // Close menu when clicking on overlay or links
+        mobileMenuOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileMenuOverlay) {
+            closeMenu();
+          }
+        });
+
+        mobileNavLinks.forEach((link) => {
+          link.addEventListener('click', () => {
+            closeMenu();
+          });
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && isOpen) {
+            closeMenu();
+          }
+        });
+      })();
+
+      // Add 'in-view' / animate classes as sections enter the viewport
+      (function () {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              const el = entry.target;
+              if (entry.isIntersecting) {
+                el.classList.add("in-view");
+                const content = el.querySelectorAll(".section-content");
+                content.forEach((c, i) => {
+                  setTimeout(
+                    () => c.classList.add("in-view", "animate-float"),
+                    i * 80,
+                  );
+                });
+                const heavy = el.querySelectorAll(".heavy-zoom");
+                heavy.forEach((h) => h.classList.add("in-view"));
+                const slow = el.querySelectorAll(".parallax-layer.slow");
+                slow.forEach(
+                  (p, i) => (p.style.transform = `translateY(${-12}px)`),
+                );
+              } else {
+                el.classList.remove("in-view");
+                el.querySelectorAll(".section-content").forEach((c) =>
+                  c.classList.remove("in-view", "animate-float"),
+                );
+                el.querySelectorAll(".heavy-zoom").forEach((h) =>
+                  h.classList.remove("in-view"),
+                );
+                el.querySelectorAll(".parallax-layer.slow").forEach(
+                  (p) => (p.style.transform = "translateY(0)"),
+                );
+              }
+            });
+          },
+          { threshold: 0.18 },
+        );
+
+        document
+          .querySelectorAll("section")
+          .forEach((s) => observer.observe(s));
+      })();
+    </script>
+  </body>
+</html>
